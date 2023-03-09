@@ -1,0 +1,29 @@
+@mixin motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+div {
+  height:100px;
+  width: 200px;
+  background: red;
+
+  @include motion {
+    animation: change-color 4s .2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  }
+}
+
+
+
+
+
+@keyframes change-color {
+  from {
+    background-color: blue;
+  }
+
+  to {
+    background-color: green;
+  }
+}
